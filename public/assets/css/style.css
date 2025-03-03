@@ -460,7 +460,7 @@ h1, h2, h3, h4 {
     color: rgba(255, 255, 255, 0.6); }
   .home-section .search-jobs-form .form-control, .home-section .search-jobs-form .btn-lg {
     height: calc(2em + 1rem + 2px);
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.3rem; }
@@ -915,10 +915,10 @@ h1, h2, h3, h4 {
   box-shadow: none !important; }
 
 .btn.btn-primary {
-  color: #fff; }
+  color: #fff !important; }
   .btn.btn-primary:hover {
-    background: #90c317;
-    border-color: #90c317; }
+    background: #90c317 !important;
+    border-color: #90c317 !important; }
 
 .btn.btn-outline-white {
   background: transparent;
@@ -961,7 +961,7 @@ h1, h2, h3, h4 {
   border-width: 2px !important; }
 
 .btn-md {
-  padding: 12px 20px; }
+  padding: 12px 20px !important; }
 
 .slanted:after, .slanted-gray:after {
   content: "";

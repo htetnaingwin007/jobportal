@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Seeker;
+Use App\Models\JobPost;
+Use Auth;
+Use App\Models\Region;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jobs = JobPost::with('company')->orderBy('created_at', 'desc')->paginate(10);
+
+        $regions = Region::orderBy('id','Desc')->get();
+        // dd($jobs);
+        $totalJobs = JobPost::all()->count();
+
+        return view('home',compact('jobs','totalJobs','regions'));
     }
 }
