@@ -20,7 +20,7 @@
                 Post Lists
             </div>
             <div class="card-body">
-                <form action="{{route('backend.post.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('backend.post.update', $post->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">

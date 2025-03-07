@@ -101,22 +101,13 @@ class JobsController extends Controller
         //     ->where('job_type', 'like', "%$job_type%")
         //     ->paginate(10);
         // return view('jobs.search',compact('searches'));
-        // }
-        $searches = JobPost::query();
+        // }elseif(job_title,job)
 
-        if ($job_title) {
-            $searches->orWhere('job_title', 'like', "%$job_title%");
-        }
-
-        if ($job_region_id) {
-            $searches->orWhere('job_region_id', 'like', "%$job_region_id%");
-        }
-
-        if ($job_type) {
-            $searches->orWhere('job_type', 'like', "%$job_type%");
-        }
-
-        $searches = $searches->paginate(10);
+        $searches = JobPost::select()
+            ->where('job_title','like',"%{$job_title}%")
+            ->orWhere('job_region_id','like',"%{$job_region_id}%")
+            ->orWhere('job_type','like',"%{$job_type}%")
+            ->paginate(10);
         return view('jobs.search',compact('searches'));
 
     }

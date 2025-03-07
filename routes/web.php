@@ -33,13 +33,7 @@ Route::group(['prefix' => 'companies'],function(){
     Route::post('company-profile-update', [App\Http\Controllers\Companies\CompanyController::class, 'companyProfileUpdate'])->name('company.profileUpdate');
 });
 
-Route::group(['prefix' => 'seekers'],function(){
-    Route::get('seeker-profile-project/{id}', [App\Http\Controllers\Seekers\SeekerController::class, 'seekerProfileproject'])->name('seeker.profileproject');
-    Route::get('seeker-profile-saved/{id}', [App\Http\Controllers\Seekers\SeekerController::class, 'seekerProfilesaved'])->name('seeker.profilesaved');
-    Route::get('seeker-profile-applied/{id}', [App\Http\Controllers\Seekers\SeekerController::class, 'seekerProfileapplied'])->name('seeker.profileapplied');
-    Route::get('seeker-profile-edit', [App\Http\Controllers\Seekers\SeekerController::class, 'seekerProfileEdit'])->name('seeker.profileEdit');
-    Route::post('seeker-profile-update', [App\Http\Controllers\Seekers\SeekerController::class, 'seekerProfileUpdate'])->name('seeker.profileUpdate');
-});
+
 
 
 
@@ -49,5 +43,7 @@ Route::group(['prefix'=>'backend','as'=>'backend.'],function(){
     Route::resource('category',App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('region',App\Http\Controllers\Admin\RegionController::class);
     Route::resource('user',App\Http\Controllers\Admin\UserController::class);
+    Route::resource('company',App\Http\Controllers\Admin\CompanyController::class);
+    Route::resource('seeker',App\Http\Controllers\Admin\SeekerController::class);
     
 });

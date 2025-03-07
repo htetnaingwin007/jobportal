@@ -28,8 +28,14 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">    
     <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
 
+    <link rel="stylesheet" href="{{asset('styleregister.css')}}">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -37,6 +43,7 @@
 
 
         <!-- NAVBAR -->
+
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -202,8 +209,10 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- SCRIPTS -->
+  
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    
     <script src="{{asset('assets/js/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('assets/js/stickyfill.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.fancybox.min.js')}}"></script>

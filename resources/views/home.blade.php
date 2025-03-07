@@ -30,6 +30,16 @@
             <h1 class="text-white font-weight-bold">The Easiest Way To Get Your Dream Job</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p>
           </div>
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
           <form method="post" class="search-jobs-form" action="{{route('search.job')}}">
             @csrf
             <div class="row mb-5">

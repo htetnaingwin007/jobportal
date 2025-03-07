@@ -20,7 +20,7 @@ class Seeker extends Model
         'phone',
 
         'location',
-        'social_media',
+        'socail_media',
         'resume',
         'skill',
         'workexperience',

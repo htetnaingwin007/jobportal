@@ -4,7 +4,7 @@
     <div class="container-fluid px-4">
             <div class="my-3">
                 <h1 class="mt-4 d-inline">Companyprofile</h1>
-                <a href="{{ route('backend.companyprofile.create') }}" class="btn btn-primary float-end" >
+                <a href="{{ route('backend.company.create') }}" class="btn btn-primary float-end" >
                     Create 
                 </a>
 
@@ -24,38 +24,28 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Logo</th>
                             <th>Id</th>
-                            <th>Company Name</th>
-                            <th>Company Owner</th>
-                            <th>Email</th>
+                            <th>Logo</th>
+                            <th>User</th>
+                            <th>Name</th>
                             <th>Phone</th>
-                            <th>Website</th>
-                            <th>Facebook</th>
-                            <th>Twitter</th>
-                            <th>LinkedIn</th>
-                            <th>Industry</th>
-                            <th>Total Employee</th>
                             <th>Address</th>
+                            <th>Website</th>
+                            <th>Total Employees</th>
                             <th>#</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                        <th>No</th>
-                            <th>Logo</th>
+                            <th>No</th>
                             <th>Id</th>
-                            <th>Company Name</th>
-                            <th>Company Owner</th>
-                            <th>Email</th>
+                            <th>Logo</th>
+                            <th>User</th>
+                            <th>Name</th>
                             <th>Phone</th>
-                            <th>Website</th>
-                            <th>Facebook</th>
-                            <th>Twitter</th>
-                            <th>LinkedIn</th>
-                            <th>Industry</th>
-                            <th>Total Employee</th>
                             <th>Address</th>
+                            <th>Website</th>
+                            <th>Total Employees</th>
                             <th>#</th>
                         </tr>
                     </tfoot>
@@ -67,23 +57,19 @@
                         @foreach($companies as $company)
                         <tr>
                             <td>{{$i++}}</td>
-                            <td><img src="{{$company->logo}}" alt="" width="50" height="50"></td>
                             <td>{{$company->id}}</td>
-                            <td>{{$company->name}}</td>
-                            <td>{{$company->owner}}</td>
-                            <td>{{$company->email}}</td>
-                            <td>{{$company->phone}}</td>
-                            <td>{{$company->website}}</td>
-                            <td>{{$company->facebook}}</td>
-                            <td>{{$company->twitter}}</td>
-                            <td>{{$company->linkin}}</td>
-                            <td>{{$company->industry}}</td>
-                            <td>{{$company->total_employee}}</td>
-                            <td>{{$company->address}}</td>
+                            <td><img src="{{$company->company_logo}}" alt="" width="50" height="50"></td>
+                            <td>{{$company->user->name}}</td>
+                            <td>{{$company->company_name}}</td>
+                            <td>{{$company->company_phone}}</td>
+                            <td>{{$company->company_address}}</td>
+                            <td>{{$company->company_website}}</td>
+                            <td>{{$company->total_employees}}</td>
+
                             
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{route('backend.companyprofile.edit',$company->id)}}" class="btn btn-sm btn-warning me-2">Edit</a>
+                                    <a href="{{route('backend.company.edit',$company->id)}}" class="btn btn-sm btn-warning me-2">Edit</a>
                                     <button type="button" class="btn btn-sm btn-danger delete" data-id="{{$company->id}}">Delete</button>
                                 </div>
                             </td>
@@ -129,7 +115,7 @@
                 // alert('hello');
                 let id = $(this).data('id');
                 // console.log(id);
-                $('#deleteForm').attr('action',`companyprofile/${id}`);
+                $('#deleteForm').attr('action',`company/${id}`);
                 $('#deleteModal').modal('show');
             })
         })
